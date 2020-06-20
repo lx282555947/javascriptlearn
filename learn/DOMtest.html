@@ -15,6 +15,20 @@
         .box{
             background-color: red;
         }
+        #father{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        #son{
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+        img{
+            position: absolute;
+            top: 2px;
+        }
     </style>
 </head>
 <body>
@@ -28,7 +42,7 @@
         <li>我是ol下的li4</li>
     </ol>
 
-    <ul>
+    <ul id="ul">
         <li>我是ul下的li1</li>
         <li>我是ul下的li2</li>
         <li>我是ul下的li3</li>
@@ -63,6 +77,20 @@
     <button id="btn4" type="button">监听时间移除</button>
     <script src="移除事件.js"></script>
     <script src="event的target和this.js"></script>
+    <a id='a' href="http://www.baidu.com">百度</a>
+    <script src="阻止标签默认行为.js"></script>
+    <br>
+    <div id="father">
+        <div id="son"></div>
+    </div>
+    <script src="阻止冒泡.js"></script>
+    <script src="事件委派.js"></script>
+    <script src="禁止菜单栏.js"></script>
+    <script src="鼠标坐标.js"></script>
+
+    <img src="img/20170218161710_wiVcE.gif">
+    <script src="图片跟随鼠标.js"></script>
+    <script src="键盘事件.js"></script>
 </body>
     <script src="获取特殊标签.js"></script>
     <script src="事件.js"></script>
