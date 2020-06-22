@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+<script>
+    var regpx = /abc/;
+    let b = regpx.test('abc');
+    console.log(b);
+    console.log('-----------------------------');
+    // ^以xxx开头
+    console.log(/^abc/.test('abcd'));
+    console.log('-----------------------------');
+    // $以xxx结尾
+    console.log(/^abc$/.test('abcd'));
+    console.log('-----------------------------');
+    //*   0个或者多个
+    console.log(/^a*$/.test(''));
+    console.log(/^a*$/.test('a'));
+    console.log(/^a*$/.test('aa'));
+    console.log('-----------------------------');
+    //+   1个或者多个
+    console.log(/^a+$/.test(''));
+    console.log(/^a+$/.test('a'));
+    console.log(/^a+$/.test('aa'));
+    console.log('-----------------------------');
+    //？  存在0个或1个
+    console.log(/^a?$/.test('a'));
+    console.log(/^a?$/.test(''));
+    console.log(/^a?$/.test('aa'));
+    console.log('-----------------------------');
+    //{number} 指定数量    {min,max} 指定范围     {min,} 大于等于min
+    console.log(/^a{3}$/.test(''));
+    console.log(/^a{3}$/.test('aa'));
+    console.log(/^a{3}$/.test('aaa'));
+    console.log('-----------------------------');
+    console.log(/^a{3,6}$/.test('aa'));
+    console.log(/^a{3,6}$/.test('aaa'));
+    console.log(/^a{3,6}$/.test('aaaa'));
+    console.log(/^a{3,6}$/.test('aaaaaaa'));
+    console.log('-----------------------------');
+    console.log(/^a{3,}$/.test('aa'));
+    console.log(/^a{3,}$/.test('aaa'));
+    console.log(/^a{3,}$/.test('aaaaaaa'));
+    console.log('-----------------------------');
+    // 字符类 []     [abc]  代表出现a、b、c中的一个
+    console.log(/^[abc]$/.test('a'));
+    console.log(/^[abc]/.test('black'));
+    console.log(/^[abc]/.test('color'));
+    console.log(/^[abc]/.test('pow'));
+    console.log(/^[a-z]$/.test('m'));
+    console.log(/^[a-z]$/.test('A'));
+    console.log(/^[a-z]$/.test('1'));
+    console.log('------------------------------');
+    //字符组合
+    console.log(/^[a-zA-Z0-9]$/.test('a'));
+    console.log(/^[a-zA-Z0-9]$/.test('A'));
+    console.log(/^[a-zA-Z0-9]$/.test('1'));
+    console.log('------------------------------');
+    //取反  在[]里面最开始加上^
+    console.log(/^[^a-z]$/.test('1'));
+    console.log(/^[^a-z]$/.test('a'));
+    console.log('------------------------------');
+    //重复某个模式
+    console.log(/^[a-zA-Z0-9-_]{6,16}$/.test('andy007'));
+    console.log(/^[a-zA-Z0-9-_]{6,16}$/.test('andy_007'));
+    console.log(/^[a-zA-Z0-9-_]{6,16}$/.test('andy-007'));
+    console.log(/^[a-zA-Z0-9-_]{6,16}$/.test('Andy-007'));
+    console.log('------------------------------');
+    //括号
+    console.log(/^(abc){2}$/.test('abcabc'));
+    console.log(/^(abc){3}$/.test('abccc'));
+    console.log(/^abc{3}$/.test('abccc'));
+    console.log('------------------------------');
+    //简写   \d  数字   \D 非数字   \w   包含字母数字下划线   \W 非字母数字下划线   \s  空格 换行等操作符   \S非操作符
+    console.log(/^\d$/.test(1));
+    console.log(/^\D$/.test(1));
+    console.log(/^\w$/.test(1));
+    console.log(/^\w$/.test('_'));
+</script>
+</body>
+</html>
